@@ -1,6 +1,23 @@
 # Multilingual ROUGE Scoring
 
-This is a port of [xl-sum](https://github.com/csebuetnlp/xl-sum) repository as a simple utility to utilize the multilingual RougeL. I do not own the codebase so hence, the questions must be redirected to [xl-sum](https://github.com/csebuetnlp/xl-sum)
+This is a port of [XL-Sum](https://github.com/csebuetnlp/xl-sum) repository as a simple utility to utilize the multilingual RougeL utility for [MIRAGE-Bench](https://github.com/vectara/mirage-bench). 
+
+**I do not own the codebase so any questions must be redirected to [XL-Sum](https://github.com/csebuetnlp/xl-sum).**
+
+## Installation
+
+To install this library, please use the following:
+
+```bash
+python -m unidic download # for japanese segmentation
+pip install -U multilingual-rouge
+```
+Alternatively to install from source:
+
+```bash
+python -m unidic download # for japanese segmentation
+pip install -e .
+```
 
 ## Overview
 
@@ -42,7 +59,7 @@ python -m rouge_score.rouge \
 
 
 ```python
-from rouge_score import rouge_scorer
+from multilingual_rouge import rouge_scorer
 
 scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True)
 scores = scorer.score('The quick brown fox jumps over the lazy dog',
@@ -51,7 +68,7 @@ scores = scorer.score('The quick brown fox jumps over the lazy dog',
 * **With provided language**
   
 ```python
-from rouge_score import rouge_scorer
+from multilingual_rouge import rouge_scorer
 
 scorer = rouge_scorer.RougeScorer(['rouge1', 'rougeL'], use_stemmer=True, lang="bengali")
 scores = scorer.score('তোমার সাথে দেখা হয়ে ভালো লাগলো।',
@@ -63,7 +80,7 @@ scores = scorer.score('তোমার সাথে দেখা হয়ে ভ�
     Custom `stemmer`/ `tokenizer` implementations must be `callable` objects, i.e. functions or classes with `__call__` method implemented. If `lang` is also given, user provided implementations take precedence over the library provided ones.
 
 ```python
-from rouge_score import rouge_scorer
+from multilingual_rouge import rouge_scorer
 
 # example with custom stemming
 class DummyStemmer(object):
@@ -86,7 +103,7 @@ scores = scorer.score('The quick brown fox jumps over the lazy dog',
                       
 ```
 
-* To see list of all available keyword arguments and reference stemmer and segmenter implementations refer to [rouge_scorer.py]("rouge_scorer.py), [stemmers.py]("stemmers.py) and [tokenizers.py]("tokenizers.py) 
+* To see list of all available keyword arguments and reference stemmer and segmenter implementations refer to [rouge_scorer.py](multilingual_rouge/rouge_scorer.py), [stemmers.py](multilingual_rouge/stemmers.py) and [tokenizers.py](multilingual_rouge/tokenizers.py) 
 
 
 ## License
