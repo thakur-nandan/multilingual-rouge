@@ -1,8 +1,10 @@
 # Multilingual ROUGE Scoring
 
-This is a port of [XL-Sum](https://github.com/csebuetnlp/xl-sum) repository as a simple utility to utilize the multilingual RougeL utility for [MIRAGE-Bench](https://github.com/vectara/mirage-bench). 
+This is a port of [XL-Sum](https://github.com/csebuetnlp/xl-sum) repository as a simple utility to utilize the multilingual RougeL utility for [MIRAGE-Bench](https://github.com/vectara/mirage-bench), with the following changes:
 
-**I do not own the codebase so any questions must be redirected to [XL-Sum](https://github.com/csebuetnlp/xl-sum).**
+1. Added [multilingual_rouge/bengali_stemmer](multilingual_rouge/bengali_stemmer/) from [bengali-stemmer](https://github.com/abhik1505040/bengali-stemmer) repository as it was not available in PyPI.
+
+> **I do not own the codebase so any questions must be redirected to [XL-Sum](https://github.com/csebuetnlp/xl-sum) repository.**
 
 ## Installation
 

@@ -1,4 +1,3 @@
-# coding=utf-8
 # Copyright 2020 The Google Research Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,34 +16,32 @@
 # Lint as: python2, python3
 """A library for tokenizing text."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+from __future__ import annotations
 
 from multilingual_rouge.tokenizers import BasicTokenizer
 
 
 def tokenize(text, stemmer=None, tokenizer=None):
-  """Tokenize input text into a list of tokens.
-  
-  Args:
-    text: A text blob to tokenize.
-    stemmer: An optional stemmer.
-    tokenizer: An optional tokenizer.
+    """Tokenize input text into a list of tokens.
 
-  Returns:
-    A list of string tokens extracted from input text.
-  """
-  if tokenizer is None:
-    tokenizer = BasicTokenizer()
+    Args:
+      text: A text blob to tokenize.
+      stemmer: An optional stemmer.
+      tokenizer: An optional tokenizer.
 
-  # Convert everything to lowercase.
-  text = text.lower()
-  # replace punctuation and tokenize
-  tokens = tokenizer(text)
+    Returns:
+      A list of string tokens extracted from input text.
+    """
+    if tokenizer is None:
+        tokenizer = BasicTokenizer()
 
-  if stemmer:
-    tokens = [stemmer(x) for x in tokens]
+    # Convert everything to lowercase.
+    text = text.lower()
+    # replace punctuation and tokenize
+    tokens = tokenizer(text)
 
-  tokens = [x for x in tokens if x]
-  return tokens
+    if stemmer:
+        tokens = [stemmer(x) for x in tokens]
+
+    tokens = [x for x in tokens if x]
+    return tokens

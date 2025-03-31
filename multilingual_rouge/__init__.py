@@ -1,1 +1,1 @@
-import multilingual_rouge as rouge
+from __future__ import annotations

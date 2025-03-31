@@ -22,8 +22,7 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
-    "turkishstemmer @ git+https://github.com/otuncelli/turkish-stemmer-python",
-    "bengali-stemmer @ git+https://github.com/abhik1505040/bengali-stemmer",
+    "TurkishStemmer",
     "absl-py",
     "nltk",
     "numpy",
